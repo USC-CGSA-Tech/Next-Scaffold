@@ -31,18 +31,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Known issues
 
-Running the project with `pnpm dev` will result in the following error:
+Under windows environment, in case prettier reports the following error:
 
 ```
- ⨯ Internal error: TypeError [ERR_INVALID_STATE]: Invalid state: ReadableStream is already closed
-    at new NodeError (node:internal/errors:405:5)
-    at ReadableByteStreamController.enqueue (node:internal/webstreams/readablestream:1157:13)
-    at D:\Git\next-scaffold\node_modules\.pnpm\next@13.5.2_react-dom@18.2.0_react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:1:461602
-    at ut (D:\Git\next-scaffold\node_modules\.pnpm\next@13.5.2_react-dom@18.2.0_react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:1:461652)
-    at ct (D:\Git\next-scaffold\node_modules\.pnpm\next@13.5.2_react-dom@18.2.0_react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:1:460930)
-    at Timeout._onTimeout (D:\Git\next-scaffold\node_modules\.pnpm\next@13.5.2_react-dom@18.2.0_react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:1:458100)
-    at listOnTimeout (node:internal/timers:573:17)
-    at process.processTimers (node:internal/timers:514:7)
+Delete `␍` prettier/prettier
 ```
 
-This is a known issue with Next.js and is being tracked in [this issue](https://github.com/vercel/next.js/issues/55608). It does not affect the functionality of the project, but it does make the development experience less pleasant.
+Assuming you are developing code using VSCode, you can fix this by switching "CRLF" to "LF" in the bottom right corner of the editor.
