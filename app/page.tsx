@@ -1,5 +1,7 @@
-export default function Home() {
-  const d = 1;
-  console.log(1111);
-  return <div className='2222'></div>;
+import React from 'react';
+
+function Home() {
+  return <div className="2222" />;
 }
+
+export default Home;
