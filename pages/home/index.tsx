@@ -4,9 +4,11 @@ import Link from 'next/link';
 
 function Home() {
   return (
-    <Button>
-      <Link href="home">To home!</Link>
-    </Button>
+    <div>
+      <Button>
+        <Link href="/">To index!</Link>
+      </Button>
+    </div>
   );
 }
 
