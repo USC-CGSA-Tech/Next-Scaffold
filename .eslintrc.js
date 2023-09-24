@@ -8,6 +8,10 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+      modules: true,
+    },
   },
   ignorePatterns: ['dist', 'node_modules/*'],
   parser: '@typescript-eslint/parser',
@@ -36,6 +40,16 @@ module.exports = {
         'no-console': 'error',
         '@typescript-eslint/no-unused-vars': 'error',
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+        'import/extensions': [
+          'error',
+          'ignorePackages',
+          {
+            js: 'never',
+            jsx: 'never',
+            ts: 'never',
+            tsx: 'never',
+          },
+        ],
         'prettier/prettier': [
           'error',
           {
