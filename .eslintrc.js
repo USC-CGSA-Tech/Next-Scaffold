@@ -9,13 +9,13 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
-    'prettier',
+    'prettier', // 确保这个在最后
   ],
   settings: {
     'import/resolver': {
       alias: {
         map: [
-          ['@', '.'], // 将 '@' 替换为实际别名，路径替换为实际的路径
+          ['@', '.'], // 根据您的项目路径配置
         ],
         extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
       },
@@ -33,16 +33,20 @@ module.exports = {
   rules: {
     semi: 0,
     indent: 0,
-    'react/jsx-filename-extension': 0,
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
     'react/prop-types': 0,
     'react/jsx-props-no-spreading': 0,
+    'react/no-array-index-key': 0,
+    'no-use-before-define': 0,
 
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
 
-    'no-use-before-define': 0,
-    'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': ['warn'],
+    '@typescript-eslint/no-use-before-define': ['off'],
+
     'implicit-arrow-linebreak': 0,
     'consistent-return': 0,
     'arrow-parens': 0,
@@ -53,4 +57,4 @@ module.exports = {
     'import/no-unresolved': 0,
     'import/prefer-default-export': 0,
   },
-}
+};
